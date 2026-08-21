@@ -42,8 +42,20 @@ const server = http.createServer(function (req, res) {
     // Check the URL requested by the browser
     console.log("Request URL: " + req.url);
 
-    // Clean the URL by removing query strings and trailing slashes
-    let cleanUrl = req.url.split('?')[0];
+    // Clean the URL safely using Node's URL module
+    let parsedUrl;
+    try {
+        // Handle absolute URIs if a proxy sends them
+        parsedUrl = new URL(req.url);
+    } catch (err) {
+        // Handle standard relative paths
+        parsedUrl = new URL(req.url, `http://${req.headers.host || "localhost"}`);
+    }
+
+    // Extract just the path (no query strings), trim whitespace, make lowercase
+    let cleanUrl = parsedUrl.pathname.trim().toLowerCase();
+
+    // Remove trailing slash if present (e.g., /home/ -> /home)
     if (cleanUrl.endsWith('/') && cleanUrl.length > 1) {
         cleanUrl = cleanUrl.slice(0, -1);
     }
@@ -65,12 +77,15 @@ const server = http.createServer(function (req, res) {
         sendFile("./script.js", "application/javascript", res);
     } 
     else if (cleanUrl.startsWith("/images/")) {
-        let imagePath = "." + cleanUrl;
+        // For images, we need to preserve the original case from the URL
+        let originalPath = parsedUrl.pathname.trim();
+        let imagePath = "." + originalPath;
         let type = getContentType(imagePath);
         sendFile(imagePath, type, res);
     } 
     else {
         // Return the custom 404 page when the requested route does not exist
+        console.log("404 Not Found triggered for URL: " + cleanUrl);
         sendFile("./404.html", "text/html", res, 404);
     }
 });
