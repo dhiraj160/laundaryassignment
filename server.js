@@ -61,25 +61,30 @@ const server = http.createServer(function (req, res) {
     }
 
     // Route to the correct file based on the cleaned URL
-    if (cleanUrl === "/" || cleanUrl === "/home") {
+    if (cleanUrl === "/" || cleanUrl === "" || cleanUrl.includes("home")) {
         sendFile("./index.html", "text/html", res);
     } 
-    else if (cleanUrl === "/about") {
+    else if (cleanUrl.includes("about")) {
         sendFile("./about.html", "text/html", res);
     } 
-    else if (cleanUrl === "/contact") {
+    else if (cleanUrl.includes("contact")) {
         sendFile("./contact.html", "text/html", res);
     } 
-    else if (cleanUrl === "/style.css") {
+    else if (cleanUrl.includes("style.css")) {
         sendFile("./style.css", "text/css", res);
     } 
-    else if (cleanUrl === "/script.js") {
+    else if (cleanUrl.includes("script.js")) {
         sendFile("./script.js", "application/javascript", res);
     } 
-    else if (cleanUrl.startsWith("/images/")) {
+    else if (cleanUrl.includes("images/")) {
         // For images, we need to preserve the original case from the URL
         let originalPath = parsedUrl.pathname.trim();
-        let imagePath = "." + originalPath;
+        
+        // Extract just the image filename part to avoid path issues
+        let parts = originalPath.split('/');
+        let fileName = parts[parts.length - 1];
+        
+        let imagePath = "./images/" + fileName;
         let type = getContentType(imagePath);
         sendFile(imagePath, type, res);
     } 
