@@ -1,0 +1,17 @@
+{
+  "name": "laundry-web-server",
+  "version": "1.0.0",
+  "description": "Simple Laundry Website Web Server using Node.js HTTP Module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "http",
+    "web-server",
+    "laundry"
+  ],
+  "author": "",
+  "license": "ISC"
+}

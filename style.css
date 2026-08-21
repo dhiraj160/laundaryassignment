@@ -1,0 +1,757 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* ---- NAVBAR ---- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 70px;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+.menu {
+    list-style: none;
+    display: flex;
+}
+.menu li {
+    margin: 0 20px;
+}
+.menu li a {
+    text-decoration: none;
+    color: #666;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 5px;
+}
+.menu li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #1597ff;
+    transition: width 0.3s ease;
+}
+.menu li a:hover::after {
+    width: 100%;
+}
+.menu li a:hover {
+    color: #1597ff;
+}
+.user-btn {
+    background-color: #dff1ff;
+    color: #1597ff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.user-btn:hover {
+    background-color: #cfe6fa;
+}
+
+/* ---- HERO SECTION ---- */
+.hero {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 78vh;
+    padding: 0 70px;
+}
+.left {
+    width: 45%;
+}
+.left h1 {
+    font-size: 58px;
+    color: #4b5563;
+    line-height: 1.25;
+}
+.left span {
+    color: #1597ff;
+}
+.left p {
+    width: 520px;
+    margin-top: 25px;
+    color: #808080;
+    font-size: 18px;
+    line-height: 1.6;
+}
+.book-btn {
+    margin-top: 35px;
+    width: 220px;
+    height: 60px;
+    border: none;
+    background-color: #1597ff;
+    color: white;
+    border-radius: 8px;
+    font-size: 17px;
+    cursor: pointer;
+}
+.right {
+    width: 45%;
+    text-align: center;
+}
+.right img {
+    width: 500px;
+    max-width: 100%;
+}
+
+/* ---- ACHIEVEMENTS BAR ---- */
+.achievements {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 70px;
+    height: 130px;
+    background-color: #2196F3;
+    color: white;
+    width: 100%;
+}
+.achievements-left h2 {
+    font-size: 38px;
+    font-weight: bold;
+    color: white;
+}
+.achievements-right {
+    display: flex;
+    justify-content: space-around;
+    width: 65%;
+}
+.achievement-card {
+    text-align: center;
+}
+.achievement-card h3 {
+    font-size: 38px;
+    color: white;
+    margin-bottom: 5px;
+}
+.achievement-card p {
+    font-size: 16px;
+    color: white;
+}
+
+/* ---- SERVICES + CART SECTION ---- */
+.services-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 60px 70px;
+    background-color: #f7f9fc;
+    gap: 40px;
+}
+.services-list {
+    width: 60%;
+    background-color: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.services-header {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+.services-header h2 {
+    font-size: 32px;
+    color: #333;
+    font-weight: 700;
+}
+.services-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+}
+.services-rows {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.service-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+.service-card:last-of-type {
+    border-bottom: none;
+}
+.service-card:hover {
+    background-color: #f8fafc;
+}
+.service-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.service-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+.service-info h3 {
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+}
+.separator {
+    color: #94a3b8;
+    font-weight: bold;
+}
+.service-info .price {
+    font-size: 18px;
+    color: #1597ff;
+    font-weight: 700;
+}
+.add-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+.add-btn:hover {
+    background-color: #e2e8f0;
+}
+.btn-icon,
+.info-icon-small {
+    width: 18px;
+    height: 18px;
+}
+.remove-btn-state {
+    background-color: #fef2f2 !important;
+    color: #dc2626 !important;
+    border-color: #fca5a5 !important;
+}
+.remove-btn-state:hover {
+    background-color: #fee2e2 !important;
+}
+.services-footer-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #6366f1;
+    font-size: 15px;
+    font-weight: 500;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* ---- CART PANEL ---- */
+.cart-booking {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.cart-card,
+.booking-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+}
+.cart-card h2,
+.booking-card h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    font-weight: 600;
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.col-sno {
+    width: 15%;
+}
+.col-name {
+    width: 55%;
+}
+.col-price {
+    width: 30%;
+    text-align: right;
+}
+.cart-container {
+    height: 180px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.cart-container::-webkit-scrollbar {
+    display: none;
+}
+.empty-cart-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+    color: #94a3b8;
+    text-align: center;
+}
+.info-icon-large {
+    width: 48px;
+    height: 48px;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+}
+.empty-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #64748b;
+    margin-bottom: 5px;
+}
+.empty-desc {
+    font-size: 14px;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f1f5f9;
+}
+.cart-item-name {
+    font-size: 15px;
+    color: #333;
+    font-weight: 500;
+}
+.cart-item-price {
+    font-size: 15px;
+    color: #1597ff;
+    font-weight: 600;
+}
+.cart-total-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+    padding-top: 15px;
+    border-top: 2px dashed #e2e8f0;
+}
+.total-label {
+    font-size: 18px;
+    font-weight: 600;
+    color: #475569;
+}
+.total {
+    font-size: 22px;
+    color: #1597ff;
+    font-weight: 700;
+}
+
+/* ---- BOOKING FORM ---- */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+.form-row .form-group {
+    flex: 1;
+}
+.booking-form label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 8px;
+}
+.booking-form input {
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+.booking-form input::placeholder {
+    color: #94a3b8;
+}
+.booking-form input:focus {
+    border-color: #1597ff;
+}
+.booking-form input.invalid {
+    border-color: #ef4444;
+}
+.error-msg {
+    color: #ef4444;
+    font-size: 12px;
+    margin-top: 5px;
+    min-height: 14px;
+}
+.book-now-btn {
+    width: 100%;
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+.book-now-btn:hover {
+    background-color: #4f46e5;
+}
+.booking-message {
+    display: none;
+    margin-top: 10px;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.4;
+    background: none;
+    border: none;
+}
+.booking-message.success {
+    color: #059669;
+}
+.booking-message.error {
+    color: #ef4444;
+}
+
+/* ---- WHY CHOOSE US / QUALITY SECTION ---- */
+.quality-section {
+    background-color: #fff;
+    padding: 60px 70px;
+}
+.quality-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.quality-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.quality-icon {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.quality-img,
+.quality-icon img,
+.quality-icon svg {
+    width: 95px;
+    height: 95px;
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: contain;
+    display: block;
+}
+.quality-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+.quality-card p {
+    font-size: 14.5px;
+    color: #7d8590;
+    line-height: 1.55;
+    max-width: 260px;
+    margin: 0 auto;
+}
+
+/* ---- NEWSLETTER SECTION ---- */
+.newsletter-section {
+    background-color: #359dfd;
+    padding: 60px 70px;
+}
+.newsletter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.newsletter-left h2 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.15;
+    letter-spacing: -0.5px;
+}
+.newsletter-right {
+    width: 520px;
+}
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.newsletter-inputs {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+.newsletter-inputs input {
+    flex: 1;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+}
+.newsletter-inputs input::placeholder {
+    color: rgba(255, 255, 255, 0.85);
+}
+.newsletter-inputs input:focus {
+    border-color: #fff;
+}
+.newsletter-btn {
+    background-color: #fff;
+    color: #359dfd;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start;
+    min-width: 190px;
+}
+
+/* ---- FOOTER ---- */
+.app-footer {
+    background-color: #f7f9fc;
+    padding: 60px 70px;
+    border-top: 1px solid #e2e8f0;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer-col {
+    flex: 1;
+}
+.footer-logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 25px;
+}
+.footer-subhead {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+.footer-desc {
+    font-size: 15px;
+    color: #7d8590;
+    line-height: 1.5;
+    max-width: 250px;
+}
+.app-footer h4 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 18px;
+}
+.app-footer ul {
+    list-style: none;
+}
+.app-footer ul li,
+.contact-col p {
+    margin-bottom: 10px;
+}
+.app-footer ul li a,
+.contact-col a {
+    color: #7d8590;
+    text-decoration: none;
+    font-size: 15px;
+}
+.app-footer ul li a:hover,
+.contact-col a:hover,
+.social-icons a:hover {
+    color: #1597ff;
+}
+.social-icons {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+.social-icons a {
+    color: #333;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---- RESPONSIVE / MEDIA QUERIES ---- */
+@media(max-width: 992px) {
+    .quality-container,
+    .app-footer .footer-container {
+        flex-wrap: wrap;
+    }
+    .quality-card,
+    .app-footer .footer-col {
+        flex: 1 1 40%;
+        margin-bottom: 30px;
+    }
+    .newsletter-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .newsletter-right {
+        width: 100%;
+    }
+}
+
+@media(max-width: 768px) {
+    body {
+        overflow: auto;
+    }
+    .navbar {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .menu {
+        flex-direction: column;
+        text-align: center;
+        margin: 15px 0;
+    }
+    .menu li {
+        margin: 10px 0;
+    }
+    .hero {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 30px;
+    }
+    .left,
+    .right {
+        width: 100%;
+    }
+    .left h1 {
+        font-size: 38px;
+    }
+    .left p {
+        width: 100%;
+    }
+    .right img {
+        width: 300px;
+        margin-top: 30px;
+    }
+    .achievements {
+        flex-direction: column;
+        height: auto;
+        padding: 30px;
+        text-align: center;
+    }
+    .achievements-left {
+        margin-bottom: 20px;
+    }
+    .achievements-right {
+        flex-direction: column;
+        width: 100%;
+    }
+    .achievement-card {
+        margin-bottom: 20px;
+    }
+    .services-section {
+        flex-direction: column;
+        padding: 30px;
+    }
+    .services-list,
+    .cart-booking {
+        width: 100%;
+    }
+    .cart-booking {
+        margin-top: 40px;
+    }
+    .service-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    .add-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    .quality-section,
+    .newsletter-section,
+    .app-footer {
+        padding: 40px 25px;
+    }
+    .quality-card {
+        flex: 1 1 100%;
+    }
+    .newsletter-inputs {
+        flex-direction: column;
+    }
+    .newsletter-btn {
+        width: 100%;
+    }
+    .app-footer .footer-col {
+        flex: 1 1 100%;
+    }
+}

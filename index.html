@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry Services</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Logo</div>
+            <ul class="menu">
+                <li><a href="/home">Home</a></li>
+                <li><a href="/home#services">Services</a></li>
+                <li><a href="/about#about">About Us</a></li>
+                <li><a href="/contact#contact">Contact Us</a></li>
+            </ul>
+            <button class="user-btn">Username</button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="left">
+                <h1>
+                    Revitalize Your <br>
+                    Clothes with Expert <br>
+                    <span>Laundry Services!</span>
+                </h1>
+                <p>
+                    From premium dry cleaning to swift wash and fold,
+                    we deliver care and convenience. Schedule a pickup
+                    and rediscover the freshness of your clothes today!
+                </p>
+                <button class="book-btn" onclick="document.getElementById('services').scrollIntoView({ behavior: 'smooth' })">
+                    Book a service today!
+                </button>
+            </div>
+            <div class="right">
+                <img src="images/laundry.webp" alt="Laundry service basket with fresh clothes">
+            </div>
+        </section>
+
+        <!-- Achievements -->
+        <section class="achievements">
+            <div class="achievements-left">
+                <h2>Our Achievements</h2>
+            </div>
+            <div class="achievements-right">
+                <div class="achievement-card">
+                    <h3>15+</h3>
+                    <p>Laundry Services</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>240+</h3>
+                    <p>Happy Customers</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>2+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>100%</h3>
+                    <p>Customer Satisfaction</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services & Cart Section -->
+        <section class="services-section" id="services">
+            <!-- Services List -->
+            <div class="services-list">
+                <div class="services-header">
+                    <h2>Our Services</h2>
+                    <p class="services-subtitle">Click On The Add To Cart Button To Add The Services To Your Cart</p>
+                </div>
+                <div class="services-rows">
+                    <div class="service-card">
+                        <div class="service-info">
+                            <img src="images/dry-cleaning.png" alt="Dry Cleaning" class="service-icon">
+                            <h3>Dry Cleaning</h3>
+                            <span class="separator">-</span>
+                            <p class="price">₹200.00</p>
+                        </div>
+                        <button class="add-btn" onclick="toggleItem('Dry Cleaning', 200, this)">
+                            Add Item
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-info">
+                            <img src="images/wash-and-fold.png" alt="Wash &amp; Fold" class="service-icon">
+                            <h3>Wash &amp; Fold</h3>
+                            <span class="separator">-</span>
+                            <p class="price">₹100.00</p>
+                        </div>
+                        <button class="add-btn" onclick="toggleItem('Wash &amp; Fold', 100, this)">
+                            Add Item
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-info">
+                            <img src="images/iron.png" alt="Ironing" class="service-icon">
+                            <h3>Ironing</h3>
+                            <span class="separator">-</span>
+                            <p class="price">₹30.00</p>
+                        </div>
+                        <button class="add-btn" onclick="toggleItem('Ironing', 30, this)">
+                            Add Item
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-info">
+                            <img src="images/stain.png" alt="Stain Removal" class="service-icon">
+                            <h3>Stain Removal</h3>
+                            <span class="separator">-</span>
+                            <p class="price">₹500.00</p>
+                        </div>
+                        <button class="add-btn" onclick="toggleItem('Stain Removal', 500, this)">
+                            Add Item
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-info">
+                            <img src="images/lether.jpg" alt="Leather &amp; Suede Cleaning" class="service-icon">
+                            <h3>Leather &amp; Suede Cleaning</h3>
+                            <span class="separator">-</span>
+                            <p class="price">₹999.00</p>
+                        </div>
+                        <button class="add-btn" onclick="toggleItem('Leather &amp; Suede Cleaning', 999, this)">
+                            Add Item
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                        </button>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-info">
+                            <img src="images/wedding-dress.png" alt="Wedding Dress Cleaning" class="service-icon">
+                            <h3>Wedding Dress Cleaning</h3>
+                            <span class="separator">-</span>
+                            <p class="price">₹2800.00</p>
+                        </div>
+                        <button class="add-btn" onclick="toggleItem('Wedding Dress Cleaning', 2800, this)">
+                            Add Item
+                            <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="services-footer-info">
+                    <svg class="info-icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Add the items to the cart and book now
+                </div>
+            </div>
+
+            <!-- Cart & Booking Form -->
+            <div class="cart-booking">
+                <!-- Cart -->
+                <div class="cart-card">
+                    <h2>Added Items</h2>
+                    <div class="cart-header">
+                        <span class="col-sno">S.No</span>
+                        <span class="col-name">Service Name</span>
+                        <span class="col-price">Price</span>
+                    </div>
+                    <div id="cart-items" class="cart-container">
+                        <div class="empty-cart-state">
+                            <svg class="info-icon-large" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                            <p class="empty-title">No Items Added</p>
+                            <p class="empty-desc">Add items to the cart from the services section.</p>
+                        </div>
+                    </div>
+                    <div class="cart-total-row">
+                        <span class="total-label">Total Amount</span>
+                        <span id="total-amount" class="total">₹0.00</span>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="booking-card">
+                    <h2>Book Now</h2>
+                    <form name="bookingForm" id="booking-form" class="booking-form" novalidate>
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" name="fullName" placeholder="John Doe" required>
+                            <span class="error-msg" id="name-error"></span>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email ID</label>
+                                <input type="email" id="email" name="email" placeholder="mailid@gmail.com" required>
+                                <span class="error-msg" id="email-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="0000000000" required>
+                                <span class="error-msg" id="phone-error"></span>
+                            </div>
+                        </div>
+                        <button type="submit" class="book-now-btn" id="book-btn">Book Now</button>
+                        <p id="booking-message" class="booking-message"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality / About Section -->
+        <section class="quality-section" id="about">
+            <div class="quality-container">
+                <div class="quality-card">
+                    <div class="quality-icon">
+                        <img src="images/premium-services.png" alt="Premium Services" class="quality-img">
+                    </div>
+                    <h3>Premium Services</h3>
+                    <p>Elevate your wardrobe with our meticulous dry cleaning, ensuring garments look and feel as good as new.</p>
+                </div>
+                <div class="quality-card">
+                    <div class="quality-icon">
+                        <img src="images/quick-support.png" alt="Quick Support" class="quality-img">
+                    </div>
+                    <h3>Quick Support</h3>
+                    <p>We're committed to providing prompt solutions to ensure your experience is smooth and worry-free</p>
+                </div>
+                <div class="quality-card">
+                    <div class="quality-icon">
+                        <img src="images/hassel-free-delivery.png" alt="Hassle Free Delivery" class="quality-img">
+                    </div>
+                    <h3>Hassle Free Delivery</h3>
+                    <p>Enjoy seamless service with our convenient pickup and delivery options, tailored to your schedule.</p>
+                </div>
+                <div class="quality-card">
+                    <div class="quality-icon">
+                        <img src="images/affordable-price.png" alt="Affordable Prices" class="quality-img">
+                    </div>
+                    <h3>Affordable Prices</h3>
+                    <p>Experience exceptional care without breaking the bank - our affordable prices make laundry day stress-free.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section">
+            <div class="newsletter-container">
+                <div class="newsletter-left">
+                    <h2>Subscribe to our<br>newsletter.</h2>
+                </div>
+                <div class="newsletter-right">
+                    <form name="newsletterForm" id="newsletter-form" class="newsletter-form">
+                        <div class="newsletter-inputs">
+                            <input type="text" id="newsletter-name" name="subscriberName" placeholder="Full name" required>
+                            <input type="email" id="newsletter-email" name="subscriberEmail" placeholder="Email" required>
+                        </div>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer" id="contact">
+        <div class="footer-container">
+            <div class="footer-col logo-col">
+                <h2 class="footer-logo">Logo</h2>
+                <h4 class="footer-subhead">About us</h4>
+                <p class="footer-desc">Providing top-quality laundry, dry cleaning, and fabric care with quick and reliable service.</p>
+            </div>
+            <div class="footer-col links-col">
+                <h4>Important Links</h4>
+                <ul>
+                    <li><a href="/about#about">About us</a></li>
+                    <li><a href="/contact#contact">Contact us</a></li>
+                    <li><a href="/home#services">Privacy Policy</a></li>
+                    <li><a href="/home#services">Terms of use</a></li>
+                    <li><a href="/home#services">Refund Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h4>Contact</h4>
+                <p><a href="mailto:mail@site.com">mail@site.com</a></p>
+                <p><a href="tel:+919123456780">+91 91234 56780</a></p>
+            </div>
+            <div class="footer-col social-col">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
