@@ -42,18 +42,8 @@ const server = http.createServer(function (req, res) {
     // Check the URL requested by the browser
     console.log("Request URL: " + req.url);
 
-    // Clean the URL safely using Node's URL module
-    let parsedUrl;
-    try {
-        // Handle absolute URIs if a proxy sends them
-        parsedUrl = new URL(req.url);
-    } catch (err) {
-        // Handle standard relative paths
-        parsedUrl = new URL(req.url, `http://${req.headers.host || "localhost"}`);
-    }
-
-    // Extract just the path (no query strings), trim whitespace, make lowercase
-    let cleanUrl = parsedUrl.pathname.trim().toLowerCase();
+    // Clean the URL safely
+    let cleanUrl = req.url.split('?')[0].trim().toLowerCase();
 
     // Remove trailing slash if present (e.g., /home/ -> /home)
     if (cleanUrl.endsWith('/') && cleanUrl.length > 1) {
@@ -77,11 +67,8 @@ const server = http.createServer(function (req, res) {
         sendFile("./script.js", "application/javascript", res);
     } 
     else if (cleanUrl.includes("images/")) {
-        // For images, we need to preserve the original case from the URL
-        let originalPath = parsedUrl.pathname.trim();
-        
-        // Extract just the image filename part to avoid path issues
-        let parts = originalPath.split('/');
+        // For images, extract just the filename part to avoid path issues
+        let parts = req.url.split('?')[0].split('/');
         let fileName = parts[parts.length - 1];
         
         let imagePath = "./images/" + fileName;
